@@ -1,0 +1,234 @@
+/* ── Mock Payment Modal ── */
+.mock-pay-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: mock-fade-in 0.2s ease-out;
+}
+
+@keyframes mock-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.mock-pay-modal {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    animation: mock-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes mock-slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Header ── */
+.mock-pay-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.mock-pay-shield {
+    color: #10b981;
+    margin-bottom: 0.8rem;
+    filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.3));
+}
+
+.mock-pay-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.3rem 0;
+}
+
+.mock-pay-tag {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* ── Body ── */
+.mock-pay-body {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.mock-pay-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.mock-pay-currency {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mock-pay-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.mock-pay-desc {
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 0 1.2rem 0;
+}
+
+.mock-pay-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.mock-pay-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.mock-pay-row span:first-child {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.mock-pay-row span:last-child {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* ── Actions ── */
+.mock-pay-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.mock-pay-btn-cancel {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.mock-pay-btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.mock-pay-btn-pay {
+    flex: 2;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.3);
+    font-family: inherit;
+}
+
+.mock-pay-btn-pay:hover {
+    box-shadow: 0 6px 28px rgba(16, 185, 129, 0.45);
+    transform: translateY(-1px);
+}
+
+/* ── Status screens ── */
+.mock-pay-status {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.mock-pay-status h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 1rem 0 0.4rem;
+}
+
+.mock-pay-status p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+}
+
+.mock-pay-spinner {
+    color: #10b981;
+    animation: mock-spin 1s linear infinite;
+}
+
+@keyframes mock-spin {
+    to { transform: rotate(360deg); }
+}
+
+.mock-pay-check-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #fff;
+    animation: mock-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes mock-pop {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.mock-pay-success h3 {
+    color: #10b981;
+}

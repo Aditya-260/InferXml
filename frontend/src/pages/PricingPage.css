@@ -1,0 +1,425 @@
+/* ═══════════════════════════════════════════
+   PricingPage — Dark premium theme
+   ═══════════════════════════════════════════ */
+
+.pp-page {
+    min-height: 100vh;
+    padding: 4rem 1.5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── Background orbs ── */
+.pp-bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.pp-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: #10b981;
+    top: -150px;
+    right: -100px;
+}
+
+.pp-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: #8b5cf6;
+    bottom: -100px;
+    left: -100px;
+}
+
+/* ── Header ── */
+.pp-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.pp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #10b981;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+}
+
+.pp-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+}
+
+.pp-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0;
+    max-width: 520px;
+    margin-inline: auto;
+    line-height: 1.6;
+}
+
+/* ── Grid ── */
+.pp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.pp-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ── Card base ── */
+.pp-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.25rem 2rem;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.pp-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pp-card-active {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Pro card ── */
+.pp-card-pro {
+    background: linear-gradient(160deg, rgba(16, 185, 129, 0.07) 0%, rgba(6, 182, 212, 0.05) 100%);
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 50px rgba(16, 185, 129, 0.06), 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.pp-card-pro:hover {
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 70px rgba(16, 185, 129, 0.1), 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Advance card ── */
+.pp-card-advance {
+    background: linear-gradient(160deg, rgba(139, 92, 246, 0.07) 0%, rgba(236, 72, 153, 0.05) 100%);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.06), 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.pp-card-advance:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 70px rgba(139, 92, 246, 0.1), 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Popular tag ── */
+.pp-popular-tag {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 1.1rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+    white-space: nowrap;
+}
+
+/* ── Current plan badge ── */
+.pp-current-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+}
+
+.pp-current-pro {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #10b981;
+}
+
+.pp-current-advance {
+    background: rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: #8b5cf6;
+}
+
+/* ── Card top section ── */
+.pp-card-top {
+    margin-bottom: 0;
+}
+
+.pp-plan-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.pp-label-pro {
+    color: #10b981;
+}
+
+.pp-label-advance {
+    color: #8b5cf6;
+}
+
+.pp-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.1rem;
+    margin: 0.6rem 0 0.5rem;
+}
+
+.pp-currency {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pp-amount {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.pp-amount-pro {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pp-amount-advance {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pp-period {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    margin-left: 0.1rem;
+}
+
+.pp-plan-desc {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ── Divider ── */
+.pp-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.07);
+    margin: 1.5rem 0;
+}
+
+.pp-divider-pro {
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.15), transparent);
+}
+
+.pp-divider-advance {
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.15), transparent);
+}
+
+/* ── Features list ── */
+.pp-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex: 1;
+}
+
+.pp-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.pp-disabled {
+    color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.pp-icon-check {
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+.pp-check-pro {
+    color: #06b6d4;
+}
+
+.pp-check-advance {
+    color: #ec4899;
+}
+
+.pp-icon-x {
+    color: rgba(255, 255, 255, 0.18);
+    flex-shrink: 0;
+}
+
+/* ── Buttons ── */
+.pp-btn {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    font-family: inherit;
+    margin-top: auto;
+}
+
+.pp-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pp-btn-ghost {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pp-btn-ghost:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.pp-btn-primary {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.pp-btn-primary:hover:not(:disabled) {
+    box-shadow: 0 6px 28px rgba(16, 185, 129, 0.45);
+    transform: translateY(-1px);
+}
+
+.pp-btn-advance {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+.pp-btn-advance:hover:not(:disabled) {
+    box-shadow: 0 6px 28px rgba(139, 92, 246, 0.45);
+    transform: translateY(-1px);
+}
+
+/* ── Spinner ── */
+.pp-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: pp-spin 0.6s linear infinite;
+}
+
+@keyframes pp-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Footnote ── */
+.pp-footnote {
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.25);
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .pp-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .pp-page {
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    .pp-title {
+        font-size: 1.8rem;
+    }
+
+    .pp-subtitle {
+        font-size: 0.92rem;
+    }
+
+    .pp-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pp-card-pro {
+        order: -1;
+    }
+
+    .pp-amount {
+        font-size: 2.6rem;
+    }
+}

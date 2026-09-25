@@ -1,0 +1,131 @@
+.animated-testimonials-container {
+    max-width: none;
+    width: 80%;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.at-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .at-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .animated-testimonials-container {
+        width: 100%;
+    }
+}
+
+.at-image-container {
+    position: relative;
+    height: 20rem;
+    /* h-80 */
+    width: 100%;
+}
+
+.at-image-wrapper {
+    position: absolute;
+    inset: 0;
+    transform-origin: bottom center;
+}
+
+.at-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 1.5rem;
+    /* rounded-3xl */
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.at-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.at-name {
+    font-size: 1.5rem;
+    /* text-2xl */
+    font-weight: 700;
+    color: #f3f4f6;
+    /* text-foreground (light gray/white) */
+    margin-bottom: 0.25rem;
+}
+
+.at-designation {
+    font-size: 0.875rem;
+    /* text-sm */
+    color: #9ca3af;
+    /* text-muted-foreground */
+}
+
+.at-quote {
+    font-size: 1.125rem;
+    /* text-lg */
+    color: #d1d5db;
+    /* slightly lighter than muted */
+    margin-top: 2rem;
+    line-height: 1.6;
+}
+
+.at-word {
+    display: inline-block;
+}
+
+.at-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .at-controls {
+        margin-top: 0;
+        padding-top: 3rem;
+        /* md:pt-0 is weird in original, maybe just separate logic */
+    }
+}
+
+.at-btn {
+    height: 2.5rem;
+    /* h-7? component says h-7 w-7 (1.75rem), I'll make it bigger for touch */
+    width: 2.5rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+    /* bg-secondary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #f3f4f6;
+}
+
+.at-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.at-btn svg {
+    transition: transform 0.3s;
+}
+
+.at-btn:hover svg.arrow-left {
+    transform: rotate(12deg);
+}
+
+.at-btn:hover svg.arrow-right {
+    transform: rotate(-12deg);
+}

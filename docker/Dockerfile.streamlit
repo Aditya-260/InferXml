@@ -1,0 +1,39 @@
+# Streamlit Dockerfile (Flexible CPU/GPU)
+ARG BASE_IMAGE=python:3.10-slim
+FROM ${BASE_IMAGE}
+
+# Prevent interactive prompts during install
+ENV DEBIAN_FRONTEND=noninteractive
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libgomp1 \
+    libgl1 \
+    libglib2.0-0 \
+    curl \
+    && if ! command -v python3 > /dev/null; then \
+       apt-get install -y python3.10 python3-pip && \
+       ln -sf /usr/bin/python3.10 /usr/bin/python && \
+       ln -sf /usr/bin/pip3 /usr/bin/pip; \
+    else \
+       ln -sf /usr/bin/python3 /usr/bin/python; \
+    fi \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY streamlit_app/requirements.txt .
+ARG TF_PACKAGE=tensorflow-cpu==2.15.0
+RUN pip install --no-cache-dir --timeout=1000 --retries=5 ${TF_PACKAGE}
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY streamlit_app/ .
+
+# Expose port
+EXPOSE 8501
+
+# Run Streamlit
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]

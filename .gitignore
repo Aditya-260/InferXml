@@ -1,0 +1,175 @@
+# ======================
+# InferX-ML .gitignore
+# ======================
+
+# -----------------
+# 1. Python Environment
+# -----------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# -----------------
+# 2. Frontend / Node
+# -----------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+frontend/dist/
+frontend/build/
+.next/
+out/
+.npm/
+.eslintcache
+.stylelintcache
+
+# -----------------
+# 3. Environment Variables & Secrets
+# -----------------
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+credentials.json
+
+# -----------------
+# 4. Machine Learning Artifacts
+# -----------------
+# Weights & Checkpoints
+*.pkl
+*.h5
+*.hdf5
+*.joblib
+*.model
+*.onnx
+*.pt
+*.pth
+*.ckpt
+/models/
+/checkpoints/
+/weights/
+
+# Data
+*.csv
+*.tsv
+*.npy
+*.npz
+*.parquet
+*.feather
+*.h5
+minio-data/
+uploads/
+/data/
+
+# -----------------
+# 5. Testing & Coverage
+# -----------------
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nyc_output/
+coverage/
+
+# -----------------
+# 6. IDEs & Editors
+# -----------------
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# -----------------
+# 7. Jupyter & Notebooks
+# -----------------
+.ipynb_checkpoints/
+*.ipynb
+
+# -----------------
+# 8. Logs & Databases
+# -----------------
+*.log
+logs/
+*.sqlite3
+*.db
+redis-data/
+pg-data/
+
+# -----------------
+# 9. Docker & OS
+# -----------------
+docker-compose.override.yml
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# -----------------
+# 10. Temporary & Caches
+# -----------------
+tmp/
+temp/
+*.tmp
+*.bak
+*.cache
+.vercel/
+.turbo/
+.cache/
+# Added by code-review-graph
+.code-review-graph/
+
+# -----------------
+# 11. AI Assistant & Editor Configs
+# -----------------
+.claude/
+.cursorrules
+.windsurfrules
+.kiro/
+.mcp.json
+.opencode.json
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+help.txt

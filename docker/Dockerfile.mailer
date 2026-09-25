@@ -1,0 +1,12 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY mailer/package*.json ./
+RUN npm install
+
+COPY mailer/ ./
+
+EXPOSE 4000
+
+CMD ["npm", "start"]
